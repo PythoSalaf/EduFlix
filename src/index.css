@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+.linear {
+  background: linear-gradient(270deg, #1a2980 0%, #26d0ce 100%);
+}
+
+.layout {
+  width: 95%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 776px) {
+  .layout {
+    width: 98%;
+  }
+}
