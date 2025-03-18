@@ -1,12 +1,15 @@
 import { MdMenu } from "react-icons/md";
 import { MdOutlineDarkMode } from "react-icons/md";
 
-const Navbar = () => {
+const Navbar = ({ handleToggle }) => {
   return (
     <nav className="w-full">
       <div className="layout flex items-center justify-between">
         <div className="flex items-center gap-x-4 w-full">
-          <MdMenu className="size-7 hidden md:block " />
+          <MdMenu
+            className="size-7 hidden md:block cursor-pointer "
+            onClick={handleToggle}
+          />
           <div className="linear h-9 w-14 rounded-lg"></div>
         </div>
         <div className="hidden md:block w-full">
