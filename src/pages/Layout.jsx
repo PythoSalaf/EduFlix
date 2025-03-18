@@ -4,18 +4,22 @@ import { Navbar, Sidebar } from "../components";
 
 const Layout = () => {
   const [toggle, setToggle] = useState(false);
+
   const handleToggle = () => {
-    if (true) {
-      setToggle(!toggle);
-    }
+    setToggle(!toggle);
     console.log("Toggle", toggle);
   };
+
   return (
     <div className="w-full">
-      <div className="w-full h-14 flex items-center  fixed ">
+      {/* Navbar */}
+      <div className="w-full h-14 flex items-center bg-white fixed">
         <Navbar handleToggle={handleToggle} />
       </div>
-      <div className="pt-14 md:pt-20 flex items-start w-full">
+
+      {/* Sidebar & Main Content */}
+      <div className="pt-14 md:pt-20 flex items-start  w-full">
+        {/* Sidebar - Hidden on mobile */}
         <div
           className={`hidden md:block h-screen fixed transition-all duration-300 ease-in-out ${
             toggle
@@ -25,14 +29,16 @@ const Layout = () => {
         >
           <Sidebar toggle={toggle} />
         </div>
+
+        {/* Main Content */}
         <div
           className={`transition-all duration-300 ease-in-out ml-auto ${
             toggle
-              ? "w-[95%] md:w-[91%] lg:w-[91%] mx-auto"
-              : "w-[83%] md:w-[83%] lg:w-[83%] "
+              ? "w-full md:w-[91%] lg:w-[96%]"
+              : "w-full md:w-[90%] lg:w-[85%]"
           }`}
         >
-          <div className="layout">
+          <div className="layout bg-red-600">
             <Outlet />
           </div>
         </div>
