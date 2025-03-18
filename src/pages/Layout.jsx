@@ -15,7 +15,7 @@ const Layout = () => {
       <div className="w-full h-14 flex items-center  fixed ">
         <Navbar handleToggle={handleToggle} />
       </div>
-      <div className="pt-20 flex items-start w-full">
+      <div className="pt-14 md:pt-20 flex items-start w-full">
         <div
           className={`hidden md:block h-screen fixed transition-all duration-300 ease-in-out ${
             toggle
@@ -28,7 +28,7 @@ const Layout = () => {
         <div
           className={`transition-all duration-300 ease-in-out ml-auto ${
             toggle
-              ? "w-[91%] md:w-[91%] lg:w-[91%] mx-auto"
+              ? "w-[95%] md:w-[91%] lg:w-[91%] mx-auto"
               : "w-[83%] md:w-[83%] lg:w-[83%] "
           }`}
         >
