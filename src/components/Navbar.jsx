@@ -1,16 +1,22 @@
 import { MdMenu } from "react-icons/md";
 import { MdOutlineDarkMode } from "react-icons/md";
+import { Link } from "react-router-dom";
 
-const Navbar = ({ handleToggle }) => {
+const Navbar = () => {
   return (
     <nav className="w-full">
       <div className="layout flex items-center justify-between">
         <div className="flex items-center gap-x-4 w-full">
-          <MdMenu
+          {/* <MdMenu
             className="size-7 hidden md:block cursor-pointer "
             onClick={handleToggle}
-          />
-          <div className="linear h-9 w-14 rounded-lg"></div>
+          /> */}
+          <Link to="/">
+            <h2 className="text-[#1a2980] text-2xl font-bold">
+              Edu-<span className="text-[#26d0ce] italic">Flix</span>
+            </h2>
+          </Link>
+          {/* <div className="linear h-9 w-14 rounded-lg"></div> */}
         </div>
         <div className="hidden md:block w-full">
           <input
