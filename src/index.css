@@ -4,6 +4,10 @@
   background: linear-gradient(270deg, #1a2980 0%, #26d0ce 100%);
 }
 
+.linear-left-right {
+  background: linear-gradient(90deg, #1a2980 0%, #26d0ce 100%);
+}
+
 .layout {
   width: 95%;
   margin: 0 auto;
