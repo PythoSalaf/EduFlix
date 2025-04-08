@@ -1,5 +1,12 @@
 import { Routes, Route } from "react-router-dom";
-import { Course, CourseLayout, Home, Layout } from "./pages";
+import {
+  Course,
+  CourseDetails,
+  CourseLayout,
+  ErrorPage,
+  Home,
+  Layout,
+} from "./pages";
 function App() {
   return (
     <>
@@ -9,7 +16,9 @@ function App() {
         </Route>
         <Route path="/courses" element={<CourseLayout />}>
           <Route index={true} element={<Course />} />
+          <Route path="/courses/:id" element={<CourseDetails />} />
         </Route>
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </>
   );

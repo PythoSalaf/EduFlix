@@ -1,6 +1,12 @@
-const VideoCard = ({ title, thumbnail, description }) => {
+import { useNavigate } from "react-router-dom";
+
+const VideoCard = ({ title, thumbnail, description, id }) => {
+  const navigate = useNavigate();
   return (
-    <div className="w-[85%] mx-auto md:w-full bg-white cursor-pointer  pb-2">
+    <div
+      className="w-[85%] mx-auto md:w-full bg-white cursor-pointer  pb-2"
+      onClick={() => navigate(`/courses/${id}`)}
+    >
       <img
         src={thumbnail}
         alt=""
