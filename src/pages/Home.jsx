@@ -1,7 +1,28 @@
-import React from "react";
-import { AI, Decen, Hero } from "../assets";
+import { useState } from "react";
+import { AI, Coinbase, Decen, Hero, Meta, Walletconnect } from "../assets";
+import { Modal } from "../components";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const wallet = [
+    {
+      id: 1,
+      name: "MetaMask",
+      logo: Meta,
+    },
+    {
+      id: 2,
+      name: "Coinbase wallet",
+      logo: Coinbase,
+    },
+    {
+      id: 3,
+      name: "Wallet Connect",
+      logo: Walletconnect,
+    },
+  ];
   return (
     <div className="w-full pb-[3rem]">
       <div className="linear py-4 md:h-screen md:py-8">
@@ -16,11 +37,11 @@ const Home = () => {
               Learn courses in your language, no barriers, just knowledge.
             </p>
             <div className="flex items-center mt-3 md:mt-0 md:justify-normal gap-x-6 ">
-              <button className="bg-white rounded-3xl px-4 py-1.5 md:py-2 text-base md:text-lg lg:text-xl">
-                Learn Now
-              </button>
-              <button className="bg-white rounded-3xl px-4 py-1.5 md:py-2 text-base md:text-lg lg:text-xl">
-                Explore Courses
+              <button
+                className="bg-white rounded-3xl px-6 py-1.5 md:py-2 text-base md:text-lg cursor-pointer lg:text-xl"
+                onClick={() => setIsModalOpen(true)}
+              >
+                Explore
               </button>
             </div>
           </div>
@@ -36,7 +57,7 @@ const Home = () => {
         <div className="mt-12 flex items-start justify-between gap-y-10 md:gap-y-0 flex-col md:flex-row">
           <div className="w-full">
             <h3 className="bg-gradient-to-l from-[#1a2980] to-[#26d0ce]  bg-clip-text text-transparent text-center md:text-left text-lg md:text-2xl font-semibold">
-              Decentralized Video Hosting for Educators on the Blockchain{" "}
+              Decentralized Video Hosting on Blockchain{" "}
             </h3>
             <p className="mt-3 text-sm md:text-lg">
               A blockchain-powered video hosting platform that enables educators
@@ -93,6 +114,33 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <div className="">
+          <h2 className="text-center text-xl md:text-2xl  font-bold">
+            EDUFLIX
+          </h2>
+          <p className="my-4 bg-gradient-to-l from-[#1a2980] to-[#26d0ce]  bg-clip-text text-transparent text-base font-semibold">
+            Innovative, Decentralized, Educational, Empowering, Secure
+          </p>
+          <div className="">
+            <h3 className="text-xl font-semibold">Choose Wallet</h3>
+            <div className="mt-5 grid gap-2 grid-cols-2 md:grid-cols-3">
+              {wallet.map((item) => (
+                <div
+                  key={item.id}
+                  className="bg-white shadow rounded-lg border border-[#dadada] cursor-pointer py-1.5 flex items-center justify-center flex-col"
+                  onClick={() => navigate("/courses")}
+                >
+                  <img src={item.logo} alt="icon" className="w-[35px]" />
+                  <h4 className=" mt-0.5  text-sm font-semibold">
+                    {item.name}
+                  </h4>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 };

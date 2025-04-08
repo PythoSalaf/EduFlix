@@ -12,7 +12,7 @@ const Sidebar = ({ toggle }) => {
   return (
     <div className="w-full">
       <NavLink
-        to="/"
+        to="/courses"
         className={({ isActive }) =>
           `${
             isActive ? "bg-[#26D0CE] text-white" : "bg-white text-black"
