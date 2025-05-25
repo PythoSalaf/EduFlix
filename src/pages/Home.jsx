@@ -25,7 +25,7 @@ const Home = () => {
   ];
   return (
     <div className="w-full pb-[3rem]">
-      <div className="linear py-4 md:h-screen md:py-8">
+      <div className="linear py-4 md:h-full md:py-8">
         <div className="layout flex items-start justify-between gap-y-9 md:gap-y-0 flex-col md:flex-row">
           <div className="w-full">
             <h2 className="text-xl md:text-3xl leading-11 font-semibold md:leading-16 lg:text-4xl">
