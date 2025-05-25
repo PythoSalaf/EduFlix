@@ -13,5 +13,6 @@ export default {
     '**/__tests__/**/*.[jt]s?(x)',
     '**/?(*.)+(spec|test).[jt]s?(x)'
   ],
+  setupFilesAfterEnv: ['./src/api/testSetup.js'],
   verbose: true
 };
