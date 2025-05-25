@@ -1,14 +1,17 @@
-// jest.config.mjs
 export default {
   testEnvironment: 'node',
   transform: {
-    '^.+\\.jsx?$': 'babel-jest'
+    '^.+\\.js$': 'babel-jest'
   },
   transformIgnorePatterns: [
-    'node_modules/(?!(node-fetch|fetch-blob|data-uri-to-buffer|formdata-polyfill)/)'
+    'node_modules/(?!(groq-sdk)/)'
   ],
-  // This is needed for ESM support
   moduleNameMapper: {
     '^(\\.{1,2}/.*)\\.js$': '$1'
-  }
+  },
+  testMatch: [
+    '**/__tests__/**/*.[jt]s?(x)',
+    '**/?(*.)+(spec|test).[jt]s?(x)'
+  ],
+  verbose: true
 };
