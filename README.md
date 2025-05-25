@@ -59,19 +59,7 @@ mkdir uploads temp
 
 ## Usage
 
-### Start the Server
 
-**Development mode:**
-```bash
-npm run server:dev
-```
-
-**Production mode:**
-```bash
-npm run server
-```
-
-The server will start on `http://localhost:3001`
 
 ### API Endpoints
 
@@ -92,10 +80,7 @@ Form Data:
 
 **Example using cURL:**
 ```bash
-curl -X POST \
-  http://localhost:3001/api/process-video \
-  -F "video=@your-video.mp4" \
-  -F 'targetLanguages=["Spanish", "French", "German"]'
+curl -X POST https://eduflix-i337.onrender.com/api/process-video   -F "video=@public/intro_to_blockchain.mp4"   -F 'targetLanguages=["Spanish", "French", "German"]'
 ```
 
 #### 3. Batch Process Videos
