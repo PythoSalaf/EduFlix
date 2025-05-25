@@ -1,21 +1,22 @@
-import fs from "fs";
-import Groq from "groq-sdk";
+//src/api/transcribe.js
 
-// Initialize the Groq client
-const groq = new Groq();
+import fs from 'fs';
+import Groq from 'groq-sdk';
+import dotenv from 'dotenv';
 
-async function main() {
-  // Create a transcription job
+// Load environment variables
+dotenv.config();
+
+const groq = new Groq({
+  apiKey: process.env.GROQ_API_KEY
+});
+
+export async function transcribeAudio(audioPath) {
   const transcription = await groq.audio.transcriptions.create({
-    file: fs.createReadStream("YOUR_AUDIO.wav"), // Required path to audio file - replace with your audio file!
-    model: "whisper-large-v3-turbo", // Required model to use for transcription
-    prompt: "Specify context or spelling", // Optional
-    response_format: "verbose_json", // Optional
-    timestamp_granularities: ["word", "segment"], // Optional (must set response_format to "json" to use and can specify "word", "segment" (default), or both)
-    language: "en", // Optional
-    temperature: 0.0, // Optional
+    file: fs.createReadStream(audioPath),
+    model: "whisper-large-v3-turbo",
+    response_format: "verbose_json",
+    language: "en",
   });
-  // To print only the transcription text, you'd use console.log(transcription.text); (here we're printing the entire transcription object to access timestamps)
-  console.log(JSON.stringify(transcription, null, 2));
+  return transcription;
 }
-main();
