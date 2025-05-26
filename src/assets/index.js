@@ -8,6 +8,7 @@ import AI from "./Ai.jpeg";
 import Meta from "./metamask.png";
 import Walletconnect from "./walletconnect.png";
 import Coinbase from "./coinbase.png";
+import Readdy from "./Readdy.webm";
 
 export {
   Hero,
@@ -20,4 +21,5 @@ export {
   Crypto2,
   Crypto3,
   Crypto4,
+  Readdy,
 };

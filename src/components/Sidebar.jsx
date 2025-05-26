@@ -24,7 +24,7 @@ const Sidebar = ({ toggle }) => {
         <div className="w-7 h-7 flex items-center justify-center shrink-0">
           <AiOutlineHome className="w-7 h-7" />
         </div>
-        {!toggle && <span className="text-lg font-semibold">Home</span>}
+        {!toggle && <span className="text-lg font-semibold">Course</span>}
       </NavLink>
       <NavLink
         to="/page"
@@ -39,7 +39,7 @@ const Sidebar = ({ toggle }) => {
         <div className="w-7 h-7 flex items-center justify-center shrink-0">
           <HiSquaresPlus className="w-7 h-7" />
         </div>
-        {!toggle && <span className="text-lg font-semibold">Home</span>}
+        {!toggle && <span className="text-lg font-semibold">Bookmark</span>}
       </NavLink>
       <NavLink
         to="/page"
@@ -54,7 +54,7 @@ const Sidebar = ({ toggle }) => {
         <div className="w-7 h-7 flex items-center justify-center shrink-0">
           <FaHeart className="w-7 h-7" />
         </div>
-        {!toggle && <span className="text-lg font-semibold">Home</span>}
+        {!toggle && <span className="text-lg font-semibold">Favourite</span>}
       </NavLink>
       <NavLink
         to="/page"
@@ -69,7 +69,7 @@ const Sidebar = ({ toggle }) => {
         <div className="w-7 h-7 flex items-center justify-center shrink-0">
           <TiDocumentText className="w-7 h-7" />
         </div>
-        {!toggle && <span className="text-lg font-semibold">Home</span>}
+        {!toggle && <span className="text-lg font-semibold">Note</span>}
       </NavLink>
       <NavLink
         to="/page"
@@ -84,7 +84,7 @@ const Sidebar = ({ toggle }) => {
         <div className="w-7 h-7 flex items-center justify-center shrink-0">
           <HiOutlineDownload className="w-7 h-7" />
         </div>
-        {!toggle && <span className="text-lg font-semibold">Home</span>}
+        {!toggle && <span className="text-lg font-semibold">Download</span>}
       </NavLink>
       <NavLink
         to="/page"
