@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 import {
   Course,
   CourseDetails,
@@ -10,6 +11,7 @@ import {
 function App() {
   return (
     <>
+    <Toaster position="top-right" />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index={true} element={<Home />} />

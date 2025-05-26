@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Splitzy } from "../assets";
+import { Readdy } from "../assets";
 import { IoIosArrowDown } from "react-icons/io";
 import { CourseTabs } from "../components";
 
@@ -17,7 +17,7 @@ const CourseDetails = () => {
       <div className="flex items-start gap-8 flex-col md:flex-row justify-between">
         <div className="w-full md:w-[65%] md:h-[300px] lg:h-[370px] bg-[#dadada] shadow rounded-2xl">
           <div className="w-[90%] mx-auto md:w-full  h-full  py-1">
-            <video src={Splitzy} controls className="w-full h-full" />
+            <video src={Readdy} controls className="w-full h-full" />
           </div>
         </div>
         <div className="w-full md:w-[35%] h-[59vh] bg-white shadow-2xl rounded-3xl py-4 overflow-y-auto">
